@@ -1,0 +1,24 @@
+{
+  "name": "hermes-node",
+  "version": "0.0.1",
+  "description": "A node package for working with Hermes API",
+  "main": "./src",
+  "scripts": {
+    "lint": "eslint src/",
+    "test": "mocha --reporter spec"
+  },
+  "author": "Andrew A. Barber",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0"
+  },
+  "devDependencies": {
+    "axios-mock-adapter": "^1.17.0",
+    "chai": "^4.2.0",
+    "eslint": "^6.7.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-markdown": "^1.0.1",
+    "mocha": "^6.2.2"
+  }
+}
