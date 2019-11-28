@@ -29,26 +29,25 @@ module.exports.performQuery = async (path) => {
       Authorization: `Bearer ${this.access_token}`,
       apikey: this.apikey,
     };
-    method = 'get';
-  } else {
-    const auth = `Basic ${Buffer.from(`${this.auth_id}:${this.auth_secret}`).toString('base64')}`;
-    method = 'post';
-    postData = {
-      grant_type: this.grant_type,
-      client_id: this.client_id,
-      client_secret: this.client_secret,
-      audience: this.audience,
-    };
-    headerData = {
-      Authorization: auth,
-    };
   }
 
   return new Promise((resolve, reject) => {
     let url;
     if (path === 'auth') {
+      method = 'post';
+      const auth = `Basic ${Buffer.from(`${this.auth_id}:${this.auth_secret}`).toString('base64')}`;
+      postData = {
+        grant_type: this.grant_type,
+        client_id: this.client_id,
+        client_secret: this.client_secret,
+        audience: this.audience,
+      };
+      headerData = {
+        Authorization: auth,
+      };
       url = `${this.authBase}/oauth/token`;
     } else {
+      method = 'get';
       url = this.base + path;
     }
     axios({
