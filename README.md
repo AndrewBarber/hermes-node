@@ -57,7 +57,7 @@ hermes.requests.getSafePlace(1234);
 
 ## Changelog
 
-You can find the changelog for the project in: [CHANGELOG.md](https://github.com/AndrewABarber/hermes-node/blob/master/CHANGELOG.md)
+You can find the changelog for the project in: [CHANGELOG.md](https://github.com/AndrewBarber/hermes-node/blob/master/CHANGELOG.md)
 
 ## Contributing
 
