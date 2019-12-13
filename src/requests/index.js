@@ -16,7 +16,7 @@ module.exports.getEvents = async trackingNumber => {
  * @param {int} trackingNumber
  */
 module.exports.getETA = async trackingNumber => {
-  const out = await core.performQuery(`/client-tracking-api/v1/eta?barcode=${trackingNumber}`);
+  const out = await core.performQuery(`/client-tracking-api/v1/etas?barcode=${trackingNumber}`);
   return out;
 };
 
