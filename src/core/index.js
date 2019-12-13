@@ -19,7 +19,7 @@ module.exports.access_token = '';
  * @param {*} path the query path
  */
 
-module.exports.performQuery = async (path) => {
+module.exports.performQuery = async path => {
   let postData;
   let headerData;
   let method;
@@ -50,17 +50,25 @@ module.exports.performQuery = async (path) => {
       method = 'get';
       url = this.base + path;
     }
+
     axios({
       method,
       url,
       data: postData,
       headers: headerData,
     })
-      .then((response) => {
+      .then(response => {
         resolve(response.data);
       })
-      .catch((error) => {
-        reject(error);
+      .catch(error => {
+        // Error 😨
+        if (error.response) {
+          console.log(error.response.data);
+        } else if (error.request) {
+          console.log(error.request);
+        } else {
+          console.log('Error', error.message);
+        }
       });
   });
 };
