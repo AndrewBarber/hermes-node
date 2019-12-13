@@ -39,11 +39,20 @@ hermes.core.apikey = '<API API Key>'; //This is your api key supplied by Hermes
 hermes.core.authorise();
 ```
 
-### Events
+### Requests
 
 ```js
-// Get's trackable events for a given parcel (trackingNumber)
-hermes.events.getEvents(1234);
+// Gets trackable events for a given parcel (trackingNumber)
+hermes.requests.getEvents(1234);
+
+// Gets an ETA for a given parcel (trackingNumber)
+hermes.requests.getETA(1234);
+
+// Gets a signature image in base64 encoding for a given parcel (trackingNumber)
+hermes.requests.getSignature(1234);
+
+// Gets a safe place image in base64 encoding for a given parcel (trackingNumber)
+hermes.requests.getSafePlace(1234);
 ```
 
 ## Changelog

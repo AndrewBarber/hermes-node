@@ -1,7 +1,7 @@
 const core = require('./core');
-const events = require('./events');
+const requests = require('./requests');
 
 module.exports = {
   core,
-  events,
+  requests,
 };
